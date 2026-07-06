@@ -93,6 +93,13 @@
     img.src = src;
   });
 
+  /* ---------- Hero video: bei reduzierter Bewegung pausieren ---------- */
+  var heroVideo = document.querySelector(".hero__video");
+  if (heroVideo && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.pause();
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

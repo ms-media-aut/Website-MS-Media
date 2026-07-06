@@ -38,17 +38,23 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg">
+          <source src="assets/video/showreel-web.mp4" type="video/mp4">
+        </video>
+        <div class="hero__veil"></div>
+      </div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="hero__content">
-        <p class="hero__eyebrow reveal">Visual Content Agency · Klagenfurt</p>
+        <p class="hero__eyebrow reveal">Werbeagentur für Webdesign · Klagenfurt</p>
         <h1 class="hero__title reveal">
           Websites,<br>
           <span class="grad-text">die begeistern.</span>
         </h1>
         <p class="hero__sub reveal">
-          Wir entwickeln moderne Homepages und verbinden sie mit
-          Werbefotografie, Imagefilm und Drohnenaufnahmen —
-          Ihr gesamter Markenauftritt aus einer Hand.
+          Wir sind Ihre Werbeagentur für moderne Homepages — ergänzt um
+          Werbefotografie, Imagefilm und Drohnenaufnahmen aus eigener
+          Produktion. Ihr gesamter Auftritt aus einer Hand.
         </p>
         <div class="hero__actions reveal">
           <a href="#kontakt" class="btn btn--primary">Projekt starten</a>
@@ -74,8 +80,8 @@
           <span class="stat__label">Einzelbilder für einen Film</span>
         </div>
         <div class="stat reveal">
-          <span class="stat__num grad-text">4K</span>
-          <span class="stat__label">Kino-Qualität, Standard</span>
+          <span class="stat__num grad-text" data-count="24" data-suffix=" h">24 h</span>
+          <span class="stat__label">Reaktionszeit auf Anfragen</span>
         </div>
       </div>
     </section>
@@ -86,8 +92,9 @@
         <p class="section__eyebrow reveal">Leistungen</p>
         <h2 class="section__title reveal">Alles, was Ihre Marke<br>digital braucht.</h2>
         <p class="section__sub reveal">
-          Von der ersten Idee bis zum fertigen Auftritt: Wir konzipieren, gestalten
-          und produzieren — Design, Code und Content perfekt aufeinander abgestimmt.
+          Im Mittelpunkt: Ihre neue Website. Rundherum alles, was sie erfolgreich
+          macht — von SEO über laufende Betreuung bis zum fertigen Foto- und
+          Videocontent aus eigener Produktion.
         </p>
 
         <div class="bento">
@@ -115,31 +122,49 @@
             </div>
           </article>
 
-          <!-- Werbefotografie -->
+          <!-- Online-Shops & Landingpages -->
+          <article class="bento__card reveal">
+            <div class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3>Online-Shops & Landingpages</h3>
+            <p>Vom Produktkatalog bis zur Kampagnen-Landingpage: Seiten, die verkaufen — klar strukturiert, schnell und auf Conversion optimiert.</p>
+          </article>
+
+          <!-- SEO -->
+          <article class="bento__card reveal">
+            <div class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6"/><path d="M11 8v6"/></svg>
+            </div>
+            <h3>SEO & Sichtbarkeit</h3>
+            <p>Damit Sie gefunden werden: sauberes technisches SEO, schnelle Ladezeiten und lokale Auffindbarkeit — von Anfang an mitgedacht.</p>
+          </article>
+
+          <!-- Betreuung -->
+          <article class="bento__card reveal">
+            <div class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3>Wartung & Betreuung</h3>
+            <p>Updates, Sicherheit, neue Inhalte: Wir bleiben nach dem Launch an Ihrer Seite — damit Ihre Website aktuell und geschützt bleibt.</p>
+          </article>
+
+          <!-- Foto, Film & Drohne -->
           <article class="bento__card reveal">
             <div class="bento__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
             </div>
-            <h3>Werbefotografie</h3>
-            <p>Bildwelten, die hängen bleiben. Wir übersetzen Ihre Botschaft in eine klare, emotionale Bildsprache — für Web, Print und Kampagnen.</p>
+            <h3>Foto, Film & Drohne</h3>
+            <p>Werbefotografie, Imagefilme und 4K-Luftaufnahmen (zertifiziert nach Austro Control) aus eigener Produktion — der authentische Content für Ihren Auftritt.</p>
           </article>
 
-          <!-- Imagefilm -->
+          <!-- Branding -->
           <article class="bento__card reveal">
             <div class="bento__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
             </div>
-            <h3>Imagefilm & Video</h3>
-            <p>Von Konzept und Storyboard über den Dreh mit moderner Kinotechnik bis zum finalen Schnitt — Filme, die Ihr Unternehmen erlebbar machen.</p>
-          </article>
-
-          <!-- Drohne -->
-          <article class="bento__card reveal">
-            <div class="bento__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><path d="M7 7l2 2M17 7l-2 2M7 17l2-2M17 17l-2-2"/></svg>
-            </div>
-            <h3>Drohnenaufnahmen</h3>
-            <p>Zertifizierter Drohnenpilot nach Austro Control: cineastische 4K-Luftaufnahmen und hochauflösende Luftbilder — österreichweit.</p>
+            <h3>Branding & Design</h3>
+            <p>Logo, Farbwelt, Typografie: Wir entwickeln die visuelle Identität, die Ihre Marke unverwechselbar macht — konsistent auf allen Kanälen.</p>
           </article>
 
           <!-- Social Media -->
@@ -151,14 +176,14 @@
             <p>Short-Form-Videos und Foto-Content, der auf Instagram, TikTok & Co. funktioniert — geplant, produziert und einsatzbereit geliefert.</p>
           </article>
 
-          <!-- Content-Pakete -->
+          <!-- Komplettpaket -->
           <article class="bento__card bento__card--wide bento__card--grad reveal">
             <div class="bento__text">
-              <h3>Content-Pakete für Kampagnen</h3>
+              <h3>Komplettpaket: Website + Content</h3>
               <p>
-                Die High-End-Lösung: Website, Fotos, Imagefilm und Clips als
-                komplettes Content-Arsenal — konsistent gestaltet, gemeinsam gedacht,
-                aus einer Hand. Ideal für Tourismus, Industrie und öffentliche Organisationen.
+                Die High-End-Lösung: Ihre neue Website samt Fotos, Imagefilm und
+                Clips — konsistent gestaltet, gemeinsam gedacht, aus einer Hand.
+                Ideal für Tourismus, Industrie und öffentliche Organisationen.
               </p>
               <a href="#kontakt" class="bento__link">Paket anfragen <span aria-hidden="true">›</span></a>
             </div>
@@ -174,22 +199,22 @@
         <h2 class="section__title section__title--ondark reveal">Geschichten, die<br><span class="grad-text">Wirkung zeigen.</span></h2>
 
         <div class="work">
-          <!-- Featured -->
+          <!-- Featured: Showreel -->
           <article class="work__featured reveal">
-            <div class="work__media media-slot" data-img="assets/images/pictures-in-motion.jpg">
-              <div class="media-slot__fallback media-slot__fallback--alps" aria-hidden="true">
-                <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-              </div>
+            <div class="work__media media-slot media-slot--video">
+              <video controls preload="none" poster="assets/images/showreel-poster.jpg">
+                <source src="assets/video/showreel-web.mp4" type="video/mp4">
+              </video>
             </div>
             <div class="work__info">
-              <span class="work__tag">Zeitrafferfilm · 4K</span>
-              <h3>Pictures in Motion</h3>
+              <span class="work__tag">Showreel · Eigene Produktion in 4K</span>
+              <h3>Bewegtbild, das berührt.</h3>
               <p>
-                Über 35.000 Einzelbilder, unzählige Stunden Arbeit: Der Zeitrafferfilm,
-                der die Schönheit der Kärntner Seen und Berge zeigt — mit eigens
-                komponiertem Soundtrack. Das Projekt, mit dem alles begann.
+                Kinoreife Aufnahmen aus eigener Produktion — wie dieser Ausschnitt
+                einer Tourismus-Produktion aus Kärnten. Vom Konzept über den Dreh
+                bis zum Schnitt entsteht alles bei uns im Haus.
               </p>
-              <a class="work__link" href="https://www.youtube.com/c/MichaelStabentheiner" target="_blank" rel="noopener">Auf YouTube ansehen <span aria-hidden="true">↗</span></a>
+              <a class="work__link" href="https://www.youtube.com/c/MichaelStabentheiner" target="_blank" rel="noopener">Mehr auf YouTube ansehen <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
@@ -202,11 +227,11 @@
               <p>Kampagnen-Content für Urlaub, Ski und Wellness — für Tourismusregionen in ganz Österreich.</p>
             </article>
             <article class="work__card reveal">
-              <div class="work__media media-slot" data-img="assets/images/imagefilm.jpg">
-                <div class="media-slot__fallback media-slot__fallback--studio" aria-hidden="true"></div>
+              <div class="work__media media-slot" data-img="assets/images/pictures-in-motion.jpg">
+                <div class="media-slot__fallback media-slot__fallback--alps" aria-hidden="true"></div>
               </div>
-              <h4>Imagefilme & Werbespots</h4>
-              <p>Corporate Films für Unternehmen und öffentliche Organisationen — von der Idee bis zur Ausstrahlung.</p>
+              <h4>Pictures in Motion</h4>
+              <p>Der Zeitrafferfilm aus über 35.000 Einzelbildern, der die Kärntner Seen und Berge zeigt — das Projekt, mit dem alles begann.</p>
             </article>
             <article class="work__card reveal">
               <div class="work__media media-slot" data-img="assets/images/drohne.jpg">
