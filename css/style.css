@@ -386,6 +386,42 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
+   REFERENZEN / LOGOS
+   ============================================================ */
+.logos {
+  background: var(--bg-light);
+  padding: 64px 0;
+}
+.logos__label {
+  text-align: center;
+  color: var(--text-mute);
+  font-size: 0.9063rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.4rem;
+}
+.logos__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem 3.2rem;
+}
+.logos__row img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: opacity 0.3s var(--ease);
+}
+.logos__row img:hover { opacity: 1; }
+@media (max-width: 640px) {
+  .logos__row { gap: 1.6rem 2rem; }
+  .logos__row img { height: 26px; }
+}
+
+/* ============================================================
    SECTIONS (generic)
    ============================================================ */
 .section { padding: 120px 0; }
