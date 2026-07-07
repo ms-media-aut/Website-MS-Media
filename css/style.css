@@ -969,6 +969,21 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 0 0 4px rgba(198, 183, 132, 0.3);
 }
 .contact__form .btn { justify-self: start; }
+.contact__form .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.contact__status {
+  font-size: 0.9063rem;
+  min-height: 1.3em;
+}
+.contact__status--success { color: #3f7d3f; }
+.contact__status--error { color: #b3261e; }
 .contact__note {
   font-size: 0.875rem;
   color: var(--text-mute);

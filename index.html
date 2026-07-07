@@ -22,6 +22,7 @@
     "alternateName": "Webdesign Kärnten",
     "description": "Werbeagentur für Webdesign, Online-Shops und SEO in Klagenfurt und Kärnten — spezialisiert auf kleine und mittelständische Unternehmen sowie Tourismusbetriebe. Ergänzt um Werbefotografie, Imagefilm und Drohnenaufnahmen aus eigener Produktion.",
     "email": "office@michaelstabentheiner.at",
+    "vatID": "ATU69786635",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sonnenhangstraße 71",
@@ -409,7 +410,11 @@
             </li>
           </ul>
         </div>
-        <form class="contact__form reveal" action="mailto:office@michaelstabentheiner.at" method="post" enctype="text/plain">
+        <form class="contact__form reveal" id="contactForm" action="https://formsubmit.co/office@michaelstabentheiner.at" method="POST">
+          <input type="hidden" name="_subject" value="Neue Projektanfrage über die Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row">
             <label>
               <span>Name</span>
@@ -435,7 +440,8 @@
             <span>Nachricht</span>
             <textarea name="nachricht" rows="5" placeholder="Erzählen Sie uns kurz von Ihrem Projekt …" required></textarea>
           </label>
-          <button type="submit" class="btn btn--primary">Nachricht senden</button>
+          <button type="submit" class="btn btn--primary" id="contactSubmit">Nachricht senden</button>
+          <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
           <p class="contact__note">Oder direkt per Mail an <a href="mailto:office@michaelstabentheiner.at">office@michaelstabentheiner.at</a></p>
         </form>
       </div>

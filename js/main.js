@@ -93,6 +93,61 @@
     img.src = src;
   });
 
+  /* ---------- Kontaktformular: AJAX-Versand via FormSubmit ---------- */
+  var contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    var statusEl = document.getElementById("contactStatus");
+    var submitBtn = document.getElementById("contactSubmit");
+    var submitLabel = submitBtn ? submitBtn.textContent : "Nachricht senden";
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Honeypot: Bots füllen verstecke Felder aus, Menschen nicht
+      var honey = contactForm.querySelector('[name="_honey"]');
+      if (honey && honey.value) {
+        statusEl.textContent = "Danke für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden.";
+        statusEl.className = "contact__status contact__status--success";
+        contactForm.reset();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Wird gesendet …";
+      statusEl.textContent = "";
+      statusEl.className = "contact__status";
+
+      var ajaxUrl = contactForm.action.replace(
+        "https://formsubmit.co/",
+        "https://formsubmit.co/ajax/"
+      );
+
+      fetch(ajaxUrl, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(contactForm),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Netzwerkfehler");
+          return res.json();
+        })
+        .then(function () {
+          statusEl.textContent = "Danke für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden.";
+          statusEl.className = "contact__status contact__status--success";
+          contactForm.reset();
+        })
+        .catch(function () {
+          statusEl.textContent =
+            "Leider ist etwas schiefgelaufen. Bitte schreiben Sie uns direkt an office@michaelstabentheiner.at.";
+          statusEl.className = "contact__status contact__status--error";
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        });
+    });
+  }
+
   /* ---------- Hero video: bei reduzierter Bewegung pausieren ---------- */
   var heroVideo = document.querySelector(".hero__video");
   if (heroVideo && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
