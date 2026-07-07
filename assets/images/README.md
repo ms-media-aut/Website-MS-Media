@@ -1,25 +1,19 @@
 # Bilder & Video für die Website
 
-Die vier neu zugesagten Fotos konnten noch nicht automatisch übernommen
-werden (sie kamen als eingefügte Bilder im Chat, nicht als Datei-Upload —
-siehe Hinweis im Chat). Sobald sie hier mit den folgenden Namen abgelegt
-werden, erscheinen sie automatisch auf der Seite:
+Alle Portfolio-Fotos sind aktiv und werden automatisch geladen:
 
-| Zieldateiname            | Dein Dateiname             | Verwendung                                    |
-|---------------------------|-----------------------------|------------------------------------------------|
-| `tourismus.jpg`           | Stabentheiner_Werbefotograf-102 | Portfolio-Karte „Tourismus & Regionen" (bereits ersetzt durch Video-Standbild — dein Foto ist hochwertiger) |
-| `werbefotografie.jpg`     | Stabentheiner_Werbefotograf-120 | Portfolio-Karte „Werbefotografie"             |
-| `drohne.jpg`              | Stabentheiner_Werbefotograf-115 | Portfolio-Karte „Luftaufnahmen"               |
-| `michael-stabentheiner.jpg` | Stabentheiner_FHD-114548  | Porträtfoto „Über uns", ideal 1000×1250 (4:5) |
+| Dateiname                    | Verwendung                                     |
+|-------------------------------|-------------------------------------------------|
+| `tourismus.jpg`               | Portfolio-Karte „Tourismus & Regionen"          |
+| `werbefotografie.jpg`         | Portfolio-Karte „Werbefotografie"                |
+| `drohne.jpg`                  | Portfolio-Karte „Luftaufnahmen"                  |
+| `businessfotos.jpg`           | Portfolio-Karte „Businessfotos & Employer Branding" |
+| `michael-stabentheiner.jpg`   | Porträtfoto „Über uns"                           |
+| `hero-poster.jpg`             | Vorschaubild des Hero-Videos (Header)           |
 
-Weitere Systemdateien (automatisch aus dem Showreel-Video extrahiert, bei
-Bedarf ersetzbar):
+Alle Fotos wurden aus den Originalen (`Stabentheiner_Werbefotograf-*.jpg`,
+`Stabentheiner-4548-2.jpg`) auf Web-Größe skaliert und komprimiert.
 
-| Dateiname             | Verwendung                            |
-|-----------------------|-----------------------------------------|
-| `hero-poster.jpg`     | Vorschaubild des Hero-Videos (Header)  |
-| `showreel-poster.jpg` | (nicht mehr verwendet — Showreel läuft jetzt als YouTube-Embed) |
-
-Video: `assets/video/showreel-web.mp4` läuft weiterhin als Hero-Hintergrund.
-Der Showreel-Player in der Arbeiten-Sektion zeigt jetzt das YouTube-Video
-https://youtu.be/KjS2mOTfHTQ statt der lokalen Datei.
+Video: `assets/video/showreel-web.mp4` läuft als Hero-Hintergrund. Der
+Showreel-Player in der Arbeiten-Sektion zeigt das YouTube-Video
+https://youtu.be/KjS2mOTfHTQ eingebettet per iframe.
