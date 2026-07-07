@@ -1,4 +1,4 @@
-/* Licht und Code — interactions */
+/* Code und Licht — interactions */
 (function () {
   "use strict";
 

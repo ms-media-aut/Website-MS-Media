@@ -1,12 +1,20 @@
 /* ============================================================
-   LICHT UND CODE — Design-System
+   CODE UND LICHT — Design-System
    ============================================================ */
 
 @font-face {
-  font-family: "Playfair Display";
-  src: url("../assets/fonts/playfair-display.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces.woff2") format("woff2");
+  font-weight: 400 600;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces-italic.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -44,7 +52,7 @@
   --radius-sm: 14px;
   --font: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
           "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --shadow-card: 0 10px 40px rgba(28, 25, 23, 0.06);
@@ -172,11 +180,10 @@ img { max-width: 100%; display: block; }
   box-sizing: border-box;
 }
 .logo-mark__glyph {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 0.75rem;
+  width: 18px;
+  height: auto;
   color: var(--gold);
-  line-height: 1;
+  flex: none;
 }
 .logo-word {
   font-family: var(--font-display);
@@ -860,11 +867,12 @@ img { max-width: 100%; display: block; }
   place-items: center;
   border: 2px solid var(--gold);
   border-radius: 22%;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   color: var(--gold);
   opacity: 0.9;
+}
+.about__initials svg {
+  width: 55%;
+  height: auto;
 }
 .about__text p {
   color: #424245;
@@ -1057,7 +1065,7 @@ img { max-width: 100%; display: block; }
   align-items: flex-start;
 }
 .footer__brand .logo-mark { width: 44px; height: 44px; border-radius: 12px; margin-top: 0.2rem; }
-.footer__brand .logo-mark__glyph { font-size: 0.9375rem; }
+.footer__brand .logo-mark__glyph { width: 23px; }
 .footer__brand strong {
   font-family: var(--font-display);
   color: var(--text-ondark);
