@@ -1,4 +1,4 @@
-/* MS Media — interactions */
+/* Licht und Code — interactions */
 (function () {
   "use strict";
 

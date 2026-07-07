@@ -1,11 +1,27 @@
 /* ============================================================
-   MS MEDIA — Apple-inspired design system
+   LICHT UND CODE — Design-System
    ============================================================ */
 
 @font-face {
   font-family: "Playfair Display";
   src: url("../assets/fonts/playfair-display.woff2") format("woff2");
   font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/jetbrains-mono.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -26,9 +42,10 @@
   --grad: linear-gradient(105deg, #e2d8b8 0%, #c6b784 45%, #9c874e 100%);
   --radius: 24px;
   --radius-sm: 14px;
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
           "Segoe UI", Helvetica, Arial, sans-serif;
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --shadow-card: 0 10px 40px rgba(28, 25, 23, 0.06);
   --shadow-card-hover: 0 20px 60px rgba(28, 25, 23, 0.12);
@@ -148,15 +165,31 @@ img { max-width: 100%; display: block; }
   width: 34px;
   height: 34px;
   flex: none;
+  display: inline-grid;
+  place-items: center;
+  border: 1.5px solid var(--gold);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.logo-mark__glyph {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
   color: var(--gold);
+  line-height: 1;
 }
 .logo-word {
-  font-size: 1.0625rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0;
   white-space: nowrap;
+  color: var(--text-ondark);
 }
-.logo-word strong { font-weight: 500; }
+.logo-word em {
+  font-style: italic;
+  color: var(--gold);
+}
 .logo-sub {
   display: block;
   font-size: 0.6875rem;
@@ -823,6 +856,13 @@ img { max-width: 100%; display: block; }
 .about__initials {
   width: clamp(90px, 14vw, 140px);
   height: clamp(90px, 14vw, 140px);
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--gold);
+  border-radius: 22%;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   color: var(--gold);
   opacity: 0.9;
 }
@@ -1016,15 +1056,17 @@ img { max-width: 100%; display: block; }
   gap: 1rem;
   align-items: flex-start;
 }
-.footer__brand .logo-mark { width: 44px; height: 44px; margin-top: 0.2rem; }
+.footer__brand .logo-mark { width: 44px; height: 44px; border-radius: 12px; margin-top: 0.2rem; }
+.footer__brand .logo-mark__glyph { font-size: 0.9375rem; }
 .footer__brand strong {
-  color: var(--gold);
-  font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  color: var(--text-ondark);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  letter-spacing: 0;
   display: block;
 }
-.footer__brand strong b { font-weight: 500; }
+.footer__brand strong em { font-style: italic; color: var(--gold); }
 .footer__brand p { font-size: 0.9063rem; line-height: 1.6; margin-top: 0.5rem; }
 .footer__links {
   display: flex;
