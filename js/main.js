@@ -82,7 +82,7 @@
   document.querySelectorAll(".media-slot[data-img]").forEach(function (slot) {
     var src = slot.getAttribute("data-img");
     var img = new Image();
-    img.alt = "";
+    img.alt = slot.getAttribute("data-alt") || "";
     img.onload = function () {
       img.setAttribute("loading", "lazy");
       slot.prepend(img);
