@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - claude/ms-media-website-gxf5qt
+  workflow_dispatch: {}
 
 jobs:
   ftp-deploy:
