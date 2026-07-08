@@ -158,4 +158,70 @@
   /* ---------- Footer year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  /* ---------- Cookie-Consent + Google Analytics ---------- */
+  var GA_ID = "G-SJPBQ5LKML";
+  var CONSENT_KEY = "cul-consent";
+  var banner = null;
+
+  function loadAnalytics() {
+    if (window.culAnalyticsLoaded) return;
+    window.culAnalyticsLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID, { anonymize_ip: true });
+  }
+
+  function hideBanner() {
+    if (banner) {
+      banner.remove();
+      banner = null;
+    }
+  }
+
+  function showBanner() {
+    if (banner) return;
+    banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie-Einwilligung");
+    banner.innerHTML =
+      '<p>Wir verwenden Google Analytics, um zu verstehen, wie unsere Website genutzt wird, und sie laufend zu verbessern. ' +
+      'Mehr dazu in unserer <a href="/impressum.html#datenschutz">Datenschutzerklärung</a>.</p>' +
+      '<div class="cookie-banner__actions">' +
+      '<button type="button" class="cookie-banner__decline">Ablehnen</button>' +
+      '<button type="button" class="cookie-banner__accept">Akzeptieren</button>' +
+      "</div>";
+    document.body.appendChild(banner);
+
+    banner.querySelector(".cookie-banner__accept").addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "accepted");
+      loadAnalytics();
+      hideBanner();
+    });
+    banner.querySelector(".cookie-banner__decline").addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "declined");
+      hideBanner();
+    });
+  }
+
+  var consent = localStorage.getItem(CONSENT_KEY);
+  if (consent === "accepted") {
+    loadAnalytics();
+  } else if (consent !== "declined") {
+    showBanner();
+  }
+
+  document.querySelectorAll(".js-cookie-settings").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem(CONSENT_KEY);
+      showBanner();
+    });
+  });
 })();
