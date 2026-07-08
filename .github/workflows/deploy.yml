@@ -22,7 +22,7 @@ jobs:
           username: h150458_claude
           password: ${{ secrets.FTP }}
           local-dir: ./
-          server-dir: ./
+          server-dir: /codeundlicht/
           exclude: |
             **/.git*
             **/.git*/**
