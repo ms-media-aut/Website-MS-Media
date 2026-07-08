@@ -1,0 +1,158 @@
+/* ============================================================
+   KÄRNTEN-RÄTSEL — ergänzt css/style.css, nutzt dessen Tokens
+   ============================================================ */
+
+.kr-challenge {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px; border-radius: var(--radius-sm);
+  background: var(--bg-gray); font-size: 0.9375rem; margin-bottom: 2rem;
+}
+.kr-challenge[hidden] { display: none; }
+.kr-challenge__flag { font-family: var(--font-mono); color: var(--accent); font-weight: 600; }
+
+.kr-progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.kr-progress__label {
+  font: 600 0.7rem/1 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute);
+}
+.kr-progress__track { flex: 1; height: 3px; background: var(--bg-gray); margin: 0 16px; border-radius: 2px; overflow: hidden; }
+.kr-progress__fill { height: 100%; background: var(--accent); transition: width 0.3s var(--ease); }
+.kr-progress__count { font: 600 0.8125rem/1 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--text-dark); }
+
+.kr-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.5rem; }
+@media (min-width: 900px) {
+  .kr-grid { flex-direction: row; align-items: flex-start; gap: 1.5rem; }
+  .kr-grid > .kr-plate { flex: 0 0 46%; }
+  .kr-grid > .kr-map { flex: 1 1 54%; }
+}
+
+.kr-card { background: #fff; border: 1px solid rgba(28, 25, 23, 0.08); border-radius: var(--radius); padding: 1.1rem; box-shadow: var(--shadow-card); }
+
+.kr-plate { padding: 0.9rem 0.9rem 1rem; }
+.kr-plate__frame { border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-gray); }
+.kr-plate__frame img { width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover; }
+.kr-plate__caption {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px dashed rgba(28, 25, 23, 0.12);
+  font-size: 0.8125rem; color: var(--text-mute);
+}
+.kr-plate__caption a { color: var(--accent); text-decoration: none; }
+.kr-plate__caption a:hover { text-decoration: underline; }
+
+.kr-map { position: relative; padding: 1.3rem 1.1rem 1.1rem; }
+.kr-corner { position: absolute; width: 13px; height: 13px; border: 1.5px solid var(--gold-deep); opacity: 0.6; }
+.kr-corner--tl { top: 9px; left: 9px; border-right: none; border-bottom: none; }
+.kr-corner--tr { top: 9px; right: 9px; border-left: none; border-bottom: none; }
+.kr-corner--bl { bottom: 9px; left: 9px; border-right: none; border-top: none; }
+.kr-corner--br { bottom: 9px; right: 9px; border-left: none; border-top: none; }
+
+.kr-map__title {
+  font: 600 0.68rem/1 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-mute); margin: 0 0 6px; text-align: center;
+}
+.kr-map__instructions { font-size: 0.85rem; color: var(--text-mute); margin: 0 0 14px; text-align: center; font-style: italic; }
+
+.kr-map__meta { display: flex; align-items: center; justify-content: center; margin: 0 0 8px; }
+.kr-clue-btn {
+  font: 600 0.78rem/1 var(--font); background: transparent; color: var(--accent);
+  border: 1.5px solid var(--accent); border-radius: 999px; padding: 6px 14px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s, transform 0.2s;
+}
+.kr-clue-btn:hover:not(:disabled) { transform: translateY(-1px); }
+.kr-clue-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.kr-clue-btn__cost { font-family: var(--font-mono); color: #a8432f; opacity: 0.85; }
+.kr-clue-text { font-size: 0.86rem; color: var(--text-dark); text-align: center; margin: 0 0 12px; min-height: 1.2em; font-style: italic; }
+
+.kr-svg { width: 100%; height: auto; display: block; cursor: crosshair; touch-action: manipulation; }
+.kr-outline { fill: rgba(125, 107, 51, 0.1); stroke: var(--accent); stroke-width: 1.75; }
+.kr-marker circle.kr-ring { fill: none; stroke-width: 1.5; opacity: 0.5; }
+.kr-marker.kr-guess circle.kr-dot { fill: #a8432f; }
+.kr-marker.kr-guess circle.kr-ring { stroke: #a8432f; }
+.kr-marker.kr-actual circle.kr-dot { fill: var(--gold-deep); }
+.kr-marker.kr-actual circle.kr-ring { stroke: var(--gold-deep); }
+.kr-marker circle.kr-dot { stroke: #fff; stroke-width: 2; }
+@media (prefers-reduced-motion: no-preference) {
+  .kr-marker { animation: kr-pop 0.28s cubic-bezier(.2,1.4,.4,1) both; }
+}
+@keyframes kr-pop { from { transform: scale(0); } to { transform: scale(1); } }
+.kr-link-line { stroke: var(--text-mute); stroke-width: 1.25; stroke-dasharray: 4 4; }
+
+.kr-legend { display: flex; justify-content: center; gap: 22px; margin-top: 10px; font-size: 0.8rem; color: var(--text-mute); }
+.kr-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.kr-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.kr-legend .kr-legend-g i { background: #a8432f; }
+.kr-legend .kr-legend-a i { background: var(--gold-deep); }
+
+.kr-hint { text-align: center; color: var(--text-mute); font-size: 0.86rem; min-height: 1.2em; margin-top: 12px; font-style: italic; }
+.kr-controls { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+
+.kr-btn {
+  font: 500 1.0rem/1 var(--font); border: none; border-radius: 999px;
+  padding: 0.8em 1.6em; cursor: pointer; background: var(--gold); color: #14120e;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.kr-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: var(--shadow-card-hover); }
+.kr-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.kr-btn--ghost {
+  background: transparent; color: var(--accent); border: 1.5px solid var(--accent);
+  padding: calc(0.8em - 1.5px) calc(1.6em - 1.5px);
+}
+.kr-btn--ghost:hover:not(:disabled) { box-shadow: none; }
+
+.kr-result { text-align: center; padding: 1.6rem 1.1rem; }
+.kr-result__kicker { font: 600 0.68rem/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); margin: 0 0 8px; }
+.kr-result__score { font: 600 2.6rem/1 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--accent); margin: 2px 0; }
+.kr-result__score small { font-size: 1rem; color: var(--text-mute); font-weight: 500; }
+.kr-result__dist { font-size: 1.02rem; margin: 6px 0 2px; }
+.kr-result__breakdown { font: 500 0.8rem/1.6 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--text-mute); margin: 4px 0 0; }
+.kr-result__place { color: var(--text-mute); font-size: 0.94rem; margin-top: 6px; font-family: var(--font-display); font-weight: 500; }
+
+.kr-summary { padding: 1.8rem 1.4rem; }
+.kr-summary h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; margin: 0 0 4px; text-align: center; }
+.kr-summary__total { text-align: center; font: 600 3rem/1 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--accent); margin: 8px 0 20px; }
+.kr-summary__total small { font-size: 1.1rem; color: var(--text-mute); font-weight: 500; }
+
+.kr-compare { border-radius: var(--radius-sm); padding: 14px 18px; text-align: center; font-size: 0.96rem; margin: 4px 0 18px; background: var(--bg-gray); }
+.kr-compare strong { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.kr-compare--win { color: var(--accent); }
+.kr-compare--lose { color: #a8432f; }
+
+.kr-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.kr-table th {
+  text-align: left; font: 600 0.62rem/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-mute); padding: 0 8px 8px; border-bottom: 1px solid rgba(28, 25, 23, 0.1);
+}
+.kr-table td { padding: 10px 8px; border-bottom: 1px solid rgba(28, 25, 23, 0.1); vertical-align: baseline; }
+.kr-table td.kr-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--accent); }
+.kr-table td.kr-place { font-family: var(--font-display); font-weight: 500; color: var(--text-mute); }
+.kr-table tr:last-child td { border-bottom: none; }
+
+.kr-save-row { display: flex; gap: 8px; margin: 18px 0 6px; }
+.kr-save-row input {
+  flex: 1; min-width: 0; font: 500 0.9375rem/1 var(--font); padding: 0.7em 0.9em;
+  border-radius: 999px; border: 1.5px solid rgba(28, 25, 23, 0.14); background: var(--bg-light); color: var(--text-dark);
+}
+.kr-save-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.kr-save-row .kr-btn { padding: 0.7em 1.4em; white-space: nowrap; }
+.kr-status { text-align: center; font-size: 0.8rem; color: var(--text-mute); min-height: 1.1em; margin: 2px 0 4px; }
+
+.kr-highscore { margin-top: 24px; }
+.kr-highscore h3 { font: 600 0.68rem/1 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); margin: 0 0 10px; text-align: center; }
+.kr-highscore ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.kr-highscore li { display: flex; align-items: baseline; gap: 10px; font-size: 0.9rem; padding: 7px 4px; border-bottom: 1px solid rgba(28, 25, 23, 0.08); }
+.kr-highscore li:last-child { border-bottom: none; }
+.kr-highscore .kr-rank { font-family: var(--font-mono); color: var(--text-mute); width: 1.4em; text-align: right; flex: none; }
+.kr-highscore .kr-pname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kr-highscore .kr-pscore { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--accent); }
+
+.kr-share { margin-top: 24px; }
+.kr-share h3 { font: 600 0.68rem/1 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); margin: 0 0 10px; text-align: center; }
+.kr-share-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.kr-share-row .kr-btn, .kr-share-row .kr-btn--ghost { padding: 0.68em 1.15em; font-size: 0.86rem; }
+
+.kr-cta {
+  margin-top: 28px; padding-top: 22px; border-top: 1px dashed rgba(28, 25, 23, 0.12);
+  display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;
+}
+.kr-cta p { font-size: 0.86rem; line-height: 1.6; color: var(--text-mute); max-width: 38ch; margin: 0; }
+.kr-cta strong { color: var(--text-dark); font-weight: 600; }
+.kr-cta .kr-btn { padding: 0.65em 1.4em; font-size: 0.86rem; }

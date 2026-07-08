@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kärnten-Rätsel — Foto-Geo-Ratespiel | Code und Licht</title>
+  <meta name="description" content="Errätst du, wo diese Fotos in Kärnten aufgenommen wurden? Ein kostenloses Geo-Ratespiel von Code und Licht mit Fotos von Michael Stabentheiner — von Almen über Seen bis zu Burgen.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Code und Licht">
+  <meta property="og:title" content="Kärnten-Rätsel — Foto-Geo-Ratespiel">
+  <meta property="og:description" content="Errätst du, wo diese Fotos aufgenommen wurden? Setz deinen Tipp auf der Karte und sammle Punkte.">
+  <meta property="og:image" content="https://www.codeundlicht.at/kaernten-raetsel/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.codeundlicht.at/kaernten-raetsel/">
+  <meta property="og:locale" content="de_AT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kärnten-Rätsel — Foto-Geo-Ratespiel">
+  <meta name="twitter:description" content="Errätst du, wo diese Fotos aufgenommen wurden? Setz deinen Tipp auf der Karte und sammle Punkte.">
+  <meta name="twitter:image" content="https://www.codeundlicht.at/kaernten-raetsel/images/og-image.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%231a1816'/><g transform='translate(4 6.2) scale(0.444)' fill='none' stroke='%23c6b784' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3 L2 13 L12 23'/><path d='M24 3 L34 13 L24 23'/><line x1='18' y1='1' x2='18' y2='25'/></g></svg>">
+  <link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/index.html#top" class="nav__logo" aria-label="Code und Licht, Startseite">
+        <span class="logo-mark" aria-hidden="true"><svg class="logo-mark__glyph" viewBox="0 0 36 26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L2 13 L12 23"/><path d="M24 3 L34 13 L24 23"/><line x1="18" y1="1" x2="18" y2="25"/></svg></span>
+        <span class="logo-word">Code <em>und</em> Licht</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="/index.html#leistungen">Leistungen</a>
+        <a href="/index.html#arbeiten">Arbeiten</a>
+        <a href="/index.html#prozess">Prozess</a>
+        <a href="/index.html#ueber">Über uns</a>
+        <a href="https://www.michaelstabentheiner.at" target="_blank" rel="noopener">Foto- & Videoproduktion</a>
+        <a href="/index.html#kontakt" class="nav__cta">Projekt anfragen</a>
+      </nav>
+      <button class="nav__burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section section--light">
+      <div class="container">
+        <p class="section__eyebrow reveal">Kärnten Feldrätsel · Foto-Standort</p>
+        <h1 class="section__title reveal">Wo <span class="grad-text">in</span> Kärnten?</h1>
+        <p class="section__sub reveal">
+          Wie gut kennst du Kärnten wirklich? In diesem kleinen Ratespiel zeigen wir dir
+          fünf Fotos, die Michael Stabentheiner quer durchs Land geschossen hat — von Almen
+          über Seen bis zu Burgen. Deine Aufgabe: den Ort auf der Karte markieren. Je genauer
+          dein Tipp, desto mehr Punkte sammelst du — am Ende kannst du dich mit Freunden
+          vergleichen.
+        </p>
+
+        <div class="kr-challenge" id="krChallengeBanner" hidden>
+          <span class="kr-challenge__flag">⚔</span>
+          <span id="krChallengeText"></span>
+        </div>
+
+        <div class="kr-progress" id="krProgress">
+          <span class="kr-progress__label">Runde</span>
+          <span class="kr-progress__track"><span class="kr-progress__fill" id="krProgressFill" style="width:0%"></span></span>
+          <span class="kr-progress__count" id="krProgressCount">1 / 5</span>
+        </div>
+
+        <div class="kr-grid" id="krGrid">
+          <div class="kr-card kr-plate">
+            <div class="kr-plate__frame">
+              <img id="krPhoto" alt="Rätselfoto aus Kärnten">
+            </div>
+            <div class="kr-plate__caption">
+              <span>Foto: <a href="https://www.michaelstabentheiner.at" target="_blank" rel="noopener">Michael Stabentheiner</a></span>
+              <span id="krRoundIndicator"></span>
+            </div>
+          </div>
+
+          <div class="kr-card kr-map">
+            <span class="kr-corner kr-corner--tl"></span><span class="kr-corner kr-corner--tr"></span>
+            <span class="kr-corner kr-corner--bl"></span><span class="kr-corner kr-corner--br"></span>
+            <p class="kr-map__title">Standort-Tipp setzen</p>
+            <p class="kr-map__instructions">Klicke auf die Karte und dann auf „Tipp abgeben“.</p>
+            <div class="kr-map__meta">
+              <button class="kr-clue-btn" id="krClueBtn">Hinweis <span class="kr-clue-btn__cost">−1000</span></button>
+            </div>
+            <p class="kr-clue-text" id="krClueText"></p>
+            <svg id="krMap" class="kr-svg" viewBox="0 0 800 600"></svg>
+            <div class="kr-legend">
+              <span class="kr-legend-g"><i></i>dein Tipp</span>
+              <span class="kr-legend-a"><i></i>tatsächlicher Ort</span>
+            </div>
+            <p class="kr-hint" id="krHint">Noch kein Tipp gesetzt</p>
+            <div class="kr-controls">
+              <button class="kr-btn" id="krGuessBtn" disabled>Tipp abgeben</button>
+              <button class="kr-btn kr-btn--ghost" id="krNextBtn" style="display:none;">Nächstes Foto</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="kr-card kr-result" id="krResultCard" hidden>
+          <p class="kr-result__kicker">Auswertung</p>
+          <div class="kr-result__score" id="krScoreValue">0<small> / 5000</small></div>
+          <div class="kr-result__dist" id="krDistValue"></div>
+          <p class="kr-result__breakdown" id="krBreakdown"></p>
+          <div class="kr-result__place" id="krPlaceValue"></div>
+        </div>
+
+        <div class="kr-card kr-summary" id="krSummaryCard" hidden>
+          <h2>Spiel beendet</h2>
+          <div class="kr-summary__total" id="krTotalScore">0<small> / 25000</small></div>
+
+          <div class="kr-compare" id="krCompareBanner" hidden></div>
+
+          <table class="kr-table">
+            <thead><tr><th>#</th><th>Ort</th><th>Entfernung</th><th>Punkte</th></tr></thead>
+            <tbody id="krSummaryBody"></tbody>
+          </table>
+
+          <div class="kr-save-row">
+            <input type="text" id="krNameInput" placeholder="Dein Name für die Bestenliste" maxlength="24">
+            <button class="kr-btn" id="krSaveScoreBtn">Speichern</button>
+          </div>
+          <p class="kr-status" id="krSaveStatus"></p>
+
+          <div class="kr-highscore">
+            <h3>Bestenliste</h3>
+            <ol id="krHighscoreList"></ol>
+          </div>
+
+          <div class="kr-share">
+            <h3>Ergebnis teilen</h3>
+            <div class="kr-share-row">
+              <a class="kr-btn kr-btn--ghost" id="krShareWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+              <button class="kr-btn kr-btn--ghost" id="krShareCopyBtn">Link kopieren</button>
+            </div>
+          </div>
+
+          <div class="kr-share">
+            <h3>Spieler herausfordern</h3>
+            <div class="kr-share-row">
+              <a class="kr-btn kr-btn--ghost" id="krChallengeWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+              <button class="kr-btn kr-btn--ghost" id="krChallengeCopyBtn">Link kopieren</button>
+            </div>
+          </div>
+          <p class="kr-status" id="krShareStatus"></p>
+
+          <div class="kr-controls">
+            <button class="kr-btn" id="krRestartBtn">Nochmal spielen</button>
+          </div>
+
+          <div class="kr-cta">
+            <p>Dir gefällt dieses Spiel? <strong>Code und Licht</strong> entwickelt auch für Ihre Marke interaktive Mini-Games und individuelle Web-Projekte.</p>
+            <a class="kr-btn kr-btn--ghost" href="/index.html#kontakt">Projekt anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-mark" aria-hidden="true"><svg class="logo-mark__glyph" viewBox="0 0 36 26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L2 13 L12 23"/><path d="M24 3 L34 13 L24 23"/><line x1="18" y1="1" x2="18" y2="25"/></svg></span>
+        <div>
+          <strong>Code <em>und</em> Licht</strong>
+          <span class="logo-sub">Webdesign, Foto & Video</span>
+          <p>Klagenfurt, Kärnten<br>Sonnenhangstraße 71, 9071 Köttmannsdorf</p>
+        </div>
+      </div>
+      <nav class="footer__links" aria-label="Fußzeile">
+        <a href="/index.html#leistungen">Leistungen</a>
+        <a href="/index.html#arbeiten">Arbeiten</a>
+        <a href="/index.html#ueber">Über uns</a>
+        <a href="https://www.michaelstabentheiner.at" target="_blank" rel="noopener">Foto- & Videoproduktion</a>
+        <a href="/index.html#kontakt">Kontakt</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/impressum.html#datenschutz">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Code und Licht · Michael Stabentheiner, Klagenfurt. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
