@@ -24,6 +24,8 @@ jobs:
           password: ${{ secrets.FTP }}
           local-dir: ./
           server-dir: /codeundlicht/
+          log-level: verbose
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
