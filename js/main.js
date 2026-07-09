@@ -93,7 +93,7 @@
     img.src = src;
   });
 
-  /* ---------- Kontaktformular: AJAX-Versand via FormSubmit ---------- */
+  /* ---------- Kontaktformular: AJAX-Versand via eigenem PHP-Endpunkt ---------- */
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
     var statusEl = document.getElementById("contactStatus");
@@ -117,19 +117,17 @@
       statusEl.textContent = "";
       statusEl.className = "contact__status";
 
-      var ajaxUrl = contactForm.action.replace(
-        "https://formsubmit.co/",
-        "https://formsubmit.co/ajax/"
-      );
-
-      fetch(ajaxUrl, {
+      fetch(contactForm.action, {
         method: "POST",
         headers: { Accept: "application/json" },
         body: new FormData(contactForm),
       })
         .then(function (res) {
-          if (!res.ok) throw new Error("Netzwerkfehler");
-          return res.json();
+          return res.json().then(function (data) {
+            if (!res.ok || !data.success) {
+              throw new Error(data && data.message ? data.message : "Netzwerkfehler");
+            }
+          });
         })
         .then(function () {
           statusEl.textContent = "Danke für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden.";
@@ -138,7 +136,7 @@
         })
         .catch(function () {
           statusEl.textContent =
-            "Leider ist etwas schiefgelaufen. Bitte schreiben Sie uns direkt an office@michaelstabentheiner.at.";
+            "Leider ist etwas schiefgelaufen. Bitte schreiben Sie uns direkt an michael@codeundlicht.at.";
           statusEl.className = "contact__status contact__status--error";
         })
         .finally(function () {
