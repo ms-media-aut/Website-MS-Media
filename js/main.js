@@ -78,20 +78,46 @@
     });
   }
 
-  /* ---------- Media slots: load real images if present ---------- */
-  document.querySelectorAll(".media-slot[data-img]").forEach(function (slot) {
+  /* ---------- Media slots: echtes Lazy Loading mit WebP + JPEG-Fallback ---------- */
+  function loadMediaSlot(slot) {
     var src = slot.getAttribute("data-img");
-    var img = new Image();
+    var webp = src.replace(/\.jpe?g$/i, ".webp");
+    var picture = document.createElement("picture");
+    var source = document.createElement("source");
+    source.srcset = webp;
+    source.type = "image/webp";
+    var img = document.createElement("img");
     img.alt = slot.getAttribute("data-alt") || "";
+    img.loading = "lazy";
+    img.decoding = "async";
     img.onload = function () {
-      img.setAttribute("loading", "lazy");
-      slot.prepend(img);
       var fb = slot.querySelector(".media-slot__fallback");
       if (fb && !fb.querySelector(".play-badge")) fb.style.display = "none";
       if (fb && fb.querySelector(".play-badge")) fb.style.background = "rgba(0,0,0,0.25)";
     };
     img.src = src;
-  });
+    picture.appendChild(source);
+    picture.appendChild(img);
+    slot.prepend(picture);
+  }
+
+  var mediaSlots = document.querySelectorAll(".media-slot[data-img]");
+  if ("IntersectionObserver" in window) {
+    var mediaIo = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadMediaSlot(entry.target);
+            mediaIo.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "200px 0px" }
+    );
+    mediaSlots.forEach(function (el) { mediaIo.observe(el); });
+  } else {
+    mediaSlots.forEach(loadMediaSlot);
+  }
 
   /* ---------- Kontaktformular: AJAX-Versand via eigenem PHP-Endpunkt ---------- */
   var contactForm = document.getElementById("contactForm");

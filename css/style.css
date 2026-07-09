@@ -659,7 +659,8 @@ img { max-width: 100%; display: block; }
   gap: 8px;
   margin-top: 14px;
 }
-.mock-blocks b {
+.mock-blocks span {
+  display: block;
   height: 42px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.09);
