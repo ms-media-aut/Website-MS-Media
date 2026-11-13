@@ -14,6 +14,7 @@
    {"@type": "Question", "name": "Web-App oder App aus dem App Store?", "acceptedAnswer": {"@type": "Answer", "text": "Für die meisten Betriebe reicht eine Web-App: Sie läuft im Browser am Computer, Tablet und Handy und lässt sich am Handy wie eine App auf den Startbildschirm legen, ohne App Store und ohne Updates über den Store. Braucht Ihr Projekt Funktionen, die nur eine App aus dem Store bietet, besprechen wir das im Erstgespräch."}},
    {"@type": "Question", "name": "Können wir unsere bisherigen Daten übernehmen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Kundenlisten, Leistungen und andere Daten aus Excel oder CSV übernehmen wir beim Start. Umgekehrt lassen sich Ihre Daten jederzeit wieder exportieren, etwa als Excel, CSV oder PDF."}},
    {"@type": "Question", "name": "Wie sicher sind unsere Daten?", "acceptedAnswer": {"@type": "Answer", "text": "Wir planen Datenschutz von Anfang an mit: Anmeldung mit Passwort und zweitem Faktor, verschlüsselte Verbindungen, Rollen für Mitarbeitende, regelmäßige Sicherungen und ein Hosting, das zu Ihren Anforderungen an die DSGVO passt."}},
+   {"@type": "Question", "name": "Schreibt bei Ihnen eine KI den Code?", "acceptedAnswer": {"@type": "Answer", "text": "Zum großen Teil ja. Wir programmieren mit KI-Assistenten wie Claude Code: Wir planen, beschreiben jeden Schritt und prüfen das Ergebnis, die KI schreibt den Code und die Tests dazu. Live geht nur, was unsere Prüfung und alle automatischen Tests besteht. Die Verantwortung und die Betreuung bleiben bei uns."}},
    {"@type": "Question", "name": "Was passiert nach dem Start?", "acceptedAnswer": {"@type": "Answer", "text": "Wir bleiben Ihr Ansprechpartner: Wartung, Sicherheitsupdates, Fehlerbehebung und neue Funktionen, wenn Ihr Betrieb wächst oder sich Abläufe ändern."}}
   ]}
  ]
@@ -57,7 +58,7 @@
       <article class="card" id="dashboards"><h3>Dashboards</h3><p>Umsatz, offene Angebote, fällige Rechnungen, Fristen und Termine auf einer Seite, mit Zeitleiste und Auswertungen nach Monat, Kunde und Leistung.</p></article>
       <article class="card"><h3>Zeiterfassung und Termine</h3><p>Zeiten mit Start und Stopp je Kunde und Auftrag, Termine aus Ihrem Kalender, Stunden direkt in die Rechnung übernehmen.</p></article>
       <article class="card"><h3>Belege und Buchhaltung</h3><p>Belege per Foto oder E-Mail sammeln, Buchungsvorschläge, Journal und Auswertungen, aufbereitet für Ihre Steuerberatung.</p></article>
-      <article class="card"><h3>Interne Werkzeuge</h3><p>Checklisten, Aufgaben, Notizbuch, Vorlagen und Freigaben: kleine Helfer, die im Alltag Zeit sparen und Fehler vermeiden.</p></article>
+      <article class="card"><h3>Social Hub und interne Werkzeuge</h3><p>Beiträge für Instagram, Facebook und LinkedIn planen und freigeben, dazu Aufgaben, Notizbuch, Vorlagen und Checklisten: Helfer, die im Alltag Zeit sparen.</p></article>
     </div>
   </div>
 </section>
@@ -69,7 +70,7 @@
       <h2>Der Überblick, den eine Tabelle nie liefert</h2>
       <p>Ein Dashboard zeigt, was heute zählt: nächster Termin, offene Aufgaben, Umsatz bis heute, Angebote in Aussicht und Fristen. Die Zeitleiste ordnet Angebote, Rechnungen, Termine und Zahlungen über Monate an, damit Engpässe früh sichtbar werden.</p>
       <p>Im Kundenportal sehen Ihre Kunden ihre Projekte, wählen Fotos oder Dateien aus, kommentieren und laden in der passenden Qualität herunter. Sie sehen sofort, was neu ist.</p>
-      <a class="link" href="../referenzen/kontor/#portal">Kundenportal in der Referenz →</a>
+      <a class="link" href="../referenzen/kontor/#portal">Kundenportal in der Referenz →</a> <a class="link" href="../referenzen/kontor/#social-hub">Social Hub in der Referenz →</a>
     </div>
     {{shot:kontor-dashboard-uebersicht|Dashboard mit Monitor für den nächsten Termin, Pegel für Umsatz und offene Rechnungen, Aufgabenliste und Zeitleiste über sechs Monate (Beispieldaten)|lazy|(max-width: 900px) 100vw, 58vw}}
   </div>
@@ -84,9 +85,24 @@
     <ol class="steps">
       <li><h3>Prozessanalyse</h3><p>Wir gehen gemeinsam durch, wie ein Auftrag bei Ihnen heute läuft, und halten fest, was bleiben soll und was einfacher werden muss.</p></li>
       <li><h3>Prototyp</h3><p>Sie bekommen früh einen klickbaren Entwurf der wichtigsten Ansichten und können ihn mit Ihrem Team ausprobieren.</p></li>
-      <li><h3>Entwicklung in Etappen</h3><p>Wir liefern in Schritten, die jeder für sich nutzbar sind. Sie testen mit echten Fällen, wir verbessern laufend.</p></li>
+      <li><h3>Entwicklung in Etappen</h3><p>Wir programmieren KI-gestützt und liefern in Schritten, die jeder für sich nutzbar sind. Sie testen mit echten Fällen, wir verbessern laufend.</p></li>
       <li><h3>Start und Betreuung</h3><p>Daten übernehmen, Team einschulen, live gehen. Danach Wartung, Updates und neue Funktionen.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="section dark" id="ki">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Offen gesagt</p>
+      <h2>Programmiert mit KI, verantwortet von uns</h2>
+      <p class="lead">Den Programmcode unserer Apps schreiben wir zum großen Teil mit KI-Programmierassistenten, etwa Claude Code von Anthropic. Das sagen wir offen dazu, denn genau das macht individuelle Software heute auch für kleinere Betriebe leistbar.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><h3>Was wir machen</h3><p>Ihre Abläufe verstehen, festlegen, was die App können soll, Aufbau und Datenmodell planen, jede Änderung lesen und prüfen, testen, auf Ihren Server bringen und betreuen. Die Verantwortung für den Code liegt bei uns.</p></article>
+      <article class="card"><h3>Was die KI macht</h3><p>Sie schreibt Code nach unseren Vorgaben, schreibt die automatischen Tests mit und hilft, Fehler zu finden. Was sie liefert, geht erst live, wenn es unsere Prüfung und alle Tests besteht.</p></article>
+      <article class="card"><h3>Was das für Sie heißt</h3><p>Schneller ein erster nutzbarer Stand und mehr Zeit für Abstimmung, Tests und Feinschliff. Entwickelt wird mit Beispieldaten, nicht mit Ihren Kundendaten, und die fertige App läuft ohne KI-Dienst im Hintergrund, außer Sie wünschen sich KI-Funktionen.</p></article>
+    </div>
   </div>
 </section>
 
@@ -101,7 +117,7 @@
         <li>Schnittstellen zu E-Mail, Kalender und Social Media, Export als Excel, CSV, PDF und Word</li>
         <li>Datenübernahme aus Excel und bestehenden Listen</li>
         <li>Automatische Tests für Berechnungen wie Beträge, Steuern und Fristen</li>
-        <li>Entwicklung mit modernen, KI-gestützten Werkzeugen: schneller am Ziel, ohne an Qualität zu sparen</li>
+        <li>KI-gestützt programmiert, von uns geprüft und getestet: <a href="#ki">so arbeiten wir</a></li>
       </ul>
     </div>
     <div class="shots-2">
@@ -122,6 +138,7 @@
       <details><summary>Web-App oder App aus dem App Store?</summary><p>Für die meisten Betriebe reicht eine Web-App: Sie läuft im Browser am Computer, Tablet und Handy und lässt sich am Handy wie eine App auf den Startbildschirm legen, ohne App Store und ohne Updates über den Store. Braucht Ihr Projekt Funktionen, die nur eine App aus dem Store bietet, besprechen wir das im Erstgespräch.</p></details>
       <details><summary>Können wir unsere bisherigen Daten übernehmen?</summary><p>Ja. Kundenlisten, Leistungen und andere Daten aus Excel oder CSV übernehmen wir beim Start. Umgekehrt lassen sich Ihre Daten jederzeit wieder exportieren, etwa als Excel, CSV oder PDF.</p></details>
       <details><summary>Wie sicher sind unsere Daten?</summary><p>Wir planen Datenschutz von Anfang an mit: Anmeldung mit Passwort und zweitem Faktor, verschlüsselte Verbindungen, Rollen für Mitarbeitende, regelmäßige Sicherungen und ein Hosting, das zu Ihren Anforderungen an die DSGVO passt.</p></details>
+      <details><summary>Schreibt bei Ihnen eine KI den Code?</summary><p>Zum großen Teil ja. Wir programmieren mit KI-Assistenten wie Claude Code: Wir planen, beschreiben jeden Schritt und prüfen das Ergebnis, die KI schreibt den Code und die Tests dazu. Live geht nur, was unsere Prüfung und alle automatischen Tests besteht. Die Verantwortung und die Betreuung bleiben bei uns.</p></details>
       <details><summary>Was passiert nach dem Start?</summary><p>Wir bleiben Ihr Ansprechpartner: Wartung, Sicherheitsupdates, Fehlerbehebung und neue Funktionen, wenn Ihr Betrieb wächst oder sich Abläufe ändern.</p></details>
     </div>
   </div>

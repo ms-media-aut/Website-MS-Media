@@ -4,11 +4,11 @@
 
 ## Leistungen
 - [Webdesign Kärnten und Klagenfurt](https://www.codeundlicht.at/webdesign-kaernten/): Websites erstellen lassen, WordPress oder schlanke statische Websites, Texte, Fotos, SEO-Grundlagen, Betreuung
-- [App-Entwicklung](https://www.codeundlicht.at/app-entwicklung/): individuelle Web-Apps und Software nach den Abläufen eines Betriebs, Dashboards, Kundenportale, Zeiterfassung, Belege, Schnittstellen
+- [App-Entwicklung](https://www.codeundlicht.at/app-entwicklung/): individuelle Web-Apps und Software nach den Abläufen eines Betriebs, Dashboards, Kundenportale, Social-Media-Planung, Zeiterfassung, Belege, Schnittstellen. Programmiert KI-gestützt (KI-Programmierassistenten wie Claude Code schreiben einen großen Teil des Codes; Planung, Prüfung, Tests und Verantwortung liegen bei Code und Licht)
 - [SEO-Optimierung](https://www.codeundlicht.at/seo-optimierung/): SEO-Check, Umsetzung und laufende Betreuung für bestehende Websites in Kärnten und Österreich
 
 ## Referenzen
-- [Referenz Kontor](https://www.codeundlicht.at/referenzen/kontor/): Web-App einer Foto- und Videoproduktion, von Anfrage, Kalkulation, Angebot, Zeiterfassung und Kundenportal bis Rechnung, Belegen, UVA und E1a (Bilder mit Beispieldaten)
+- [Referenz Kontor](https://www.codeundlicht.at/referenzen/kontor/): Web-App für Betriebe mit Aufträgen, von Anfrage, Angebot, Zeiterfassung und Rechnung bis Belegen, UVA und E1a, mit Kundenportal und Social Hub für Instagram, Facebook und LinkedIn (gezeigt mit den Daten eines erfundenen Elektrobetriebs)
 - [Kärnten-Rätsel](https://www.codeundlicht.at/kaernten-raetsel/): Geo-Ratespiel mit Fotos aus Kärnten
 - [michaelstabentheiner.at](https://www.michaelstabentheiner.at/): Foto- und Videoproduktion desselben Inhabers; Website, SEO und Ladezeit von Code und Licht überarbeitet
 

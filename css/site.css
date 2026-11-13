@@ -147,6 +147,13 @@ img, video { max-width: 100%; display: block; height: auto; }
 .hero .lead { color: var(--muted); }
 .hero__shot { margin: 0; }
 @media (max-width: 900px) { .hero__grid { grid-template-columns: 1fr; } }
+.hero--video { position: relative; overflow: hidden; min-height: min(88svh, 900px); display: flex; align-items: flex-end; background: var(--anthrazit, #25221F); }
+.hero__media { position: absolute; inset: 0; }
+.hero__video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__veil { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,25,23,.78) 0%, rgba(28,25,23,.5) 55%, rgba(28,25,23,.25) 100%), linear-gradient(180deg, rgba(28,25,23,.35) 0%, rgba(28,25,23,0) 40%, rgba(28,25,23,.6) 100%); }
+.hero--video .hero__content { position: relative; z-index: 1; width: 100%; }
+.hero--video .hero__content > * { max-width: 46rem; }
+.hero--video .lead { color: rgba(247,244,240,.86); }
 .page-hero { padding-block: clamp(48px, 6vw, 96px); }
 .page-hero h1 { max-width: 20ch; }
 .page-hero .lead { color: var(--muted); max-width: 40rem; }

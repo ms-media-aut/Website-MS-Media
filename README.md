@@ -8,14 +8,15 @@ Drohnenaufnahmen.
 
 Neu aufgebaut im CI 2026 von Michael Stabentheiner (Gold/Sand, Anthrazit, Papier, Open Sans, Radius 0); das Logo
 „Code und Licht“ bleibt. Schwerpunkte: App-Entwicklung, Dashboards und Kundenportale, Webdesign, SEO für bestehende
-Websites; großes Referenzprojekt „Kontor“ (Web-App einer Foto- und Videoproduktion, Bilder mit Beispieldaten).
+Websites; großes Referenzprojekt „Kontor“ (Web-App mit Kundenportal und Social Hub, gezeigt mit den Daten eines erfundenen
+Elektrobetriebs). KI-gestützte Programmierung wird offen kommuniziert (App-Entwicklung, Abschnitt „Programmiert mit KI“).
 
 ## Struktur
 
 ```
 quelle/*.html            Inhalte der Seiten (Metadaten als JSON-Block oben, dann der Inhalt von <main>)
 werkzeuge/seiten_bauen.py  baut daraus die fertigen Seiten (Kopf, Menü, Fußzeile, Title, Beschreibung, Schema)
-werkzeuge/referenz_bilder.py  Bildschirmfotos der Referenz Kontor (Name im Logo ersetzt, WebP und JPEG, 720er-Fassung)
+werkzeuge/referenz_bilder.py  Bildschirmfotos der Demo-Fassung von Kontor zuschneiden (WebP und JPEG, 720er-Fassung)
 index.html               Startseite (gebaut)
 webdesign-kaernten/      Webdesign Kärnten und Klagenfurt (gebaut)
 app-entwicklung/         App-Entwicklung (gebaut)
