@@ -1,38 +1,41 @@
 # MS Media — Website
 
-Moderne One-Page-Website im Apple-Stil für **MS Media**, die Werbeagentur von
+Website von **Code und Licht** (codeundlicht.at), die Werbeagentur von
 Michael Stabentheiner (Klagenfurt) — Webdesign, Werbefotografie, Imagefilm und
 Drohnenaufnahmen.
+
+## Stand November 2026
+
+Neu aufgebaut im CI 2026 von Michael Stabentheiner (Gold/Sand, Anthrazit, Papier, Open Sans, Radius 0); das Logo
+„Code und Licht“ bleibt. Schwerpunkte: App-Entwicklung, Dashboards und Kundenportale, Webdesign, SEO für bestehende
+Websites; großes Referenzprojekt „Kontor“ (Web-App einer Foto- und Videoproduktion, Bilder mit Beispieldaten).
 
 ## Struktur
 
 ```
-index.html          Startseite (One-Pager)
-impressum.html      Impressum & Datenschutz
-css/style.css       Design-System (Apple-inspiriert, responsiv)
-js/main.js          Scroll-Animationen, Zähler, mobile Navigation
-assets/images/      Fotos (siehe assets/images/README.md)
+quelle/*.html            Inhalte der Seiten (Metadaten als JSON-Block oben, dann der Inhalt von <main>)
+werkzeuge/seiten_bauen.py  baut daraus die fertigen Seiten (Kopf, Menü, Fußzeile, Title, Beschreibung, Schema)
+werkzeuge/referenz_bilder.py  Bildschirmfotos der Referenz Kontor (Name im Logo ersetzt, WebP und JPEG, 720er-Fassung)
+index.html               Startseite (gebaut)
+app-entwicklung/         App-Entwicklung (gebaut)
+referenzen/kontor/       Referenzprojekt Kontor (gebaut)
+seo-optimierung/         SEO-Optimierung (gebaut)
+impressum.html           Impressum und Datenschutz (gebaut)
+css/site.css             Gestaltung nach CI 2026
+css/style.css            alte Gestaltung, nur noch für das Kärnten-Rätsel
+js/main.js               Menü am Handy, Einblenden, Kontaktformular, Cookie-Hinweis
+kaernten-raetsel/        Spiel (eigene Seite)
+contact.php              Versand des Kontaktformulars
+assets/                  Schriften (Open Sans, Archivo), Bilder, Videos
 ```
 
-## Lokal ansehen
+## Seiten ändern
 
-Einfach `index.html` im Browser öffnen — die Seite ist rein statisch,
-kein Build-Schritt nötig. Alternativ:
+Texte in `quelle/` bearbeiten, dann bauen und prüfen:
 
 ```bash
-python3 -m http.server 8000
-# → http://localhost:8000
+python3 -I werkzeuge/seiten_bauen.py          # schreibt die Seiten, prüft Title (≤ 60), Beschreibung (≤ 155), eine H1, Links, Bilder
+python3 -m http.server 8000                   # ansehen unter http://localhost:8000
 ```
 
-## Eigene Fotos einbinden
-
-Siehe [`assets/images/README.md`](assets/images/README.md) — Bilder mit den
-richtigen Dateinamen in den Ordner legen, fertig. Ohne Bilder zeigt die Seite
-automatisch hochwertige Gradient-Platzhalter.
-
-## Anpassen
-
-- **Farben / Akzent:** CSS-Variablen am Anfang von `css/style.css` (`--accent`, `--grad`)
-- **Texte:** direkt in `index.html`
-- **Kontaktformular:** aktuell `mailto:`-Fallback — für echten Versand einen
-  Dienst wie Formspree/Web3Forms eintragen (`action`-Attribut des Formulars)
+Die gebauten HTML-Dateien nicht direkt bearbeiten; sie werden beim nächsten Bauen überschrieben.

@@ -1,0 +1,202 @@
+<!---
+{
+ "pfad": "/referenzen/kontor/",
+ "titel": "Referenz Kontor: Web-App vom Angebot bis zur Buchung",
+ "beschreibung": "Referenzprojekt Kontor: eine Web-App für eine Foto- und Videoproduktion, von der Anfrage über Angebot, Kundenportal und Rechnung bis zur Buchhaltung.",
+ "nav": "referenz",
+ "bild": "/assets/images/referenz-kontor/kontor-dashboard-uebersicht.jpg",
+ "krumen": [["Referenz Kontor", "/referenzen/kontor/"]],
+ "vorladen": ["assets/images/referenz-kontor/kontor-dashboard-hero-720.webp"],
+ "schema": [
+  {"@type": "SoftwareApplication", "@id": "https://www.codeundlicht.at/referenzen/kontor/#app", "name": "Kontor", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, Android, iOS (als Web-App installierbar)", "description": "Web-App für eine Foto- und Videoproduktion: Anfragen, Kalkulation, Angebote, Zeiterfassung, Kundenportal, Rechnungen, Belege, Buchhaltung mit UVA und E1a, Social-Media-Planung und Dashboard.", "creator": {"@id": "https://www.codeundlicht.at/#organisation"}, "screenshot": "https://www.codeundlicht.at/assets/images/referenz-kontor/kontor-dashboard-uebersicht.jpg", "inLanguage": "de-AT"}
+ ]
+}
+--->
+<section class="page-hero dark">
+  <div class="container">
+    <p class="crumbs"><a href="../../">Start</a> › Referenz Kontor</p>
+    <p class="eyebrow">Referenzprojekt · Web-App</p>
+    <h1>Kontor: vom ersten Kundenkontakt bis zur fertigen Buchung</h1>
+    <p class="lead">Eine Plattform für eine Foto- und Videoproduktion, in der jeder Auftrag den ganzen Weg geht: Anfrage, Kalkulation, Angebot, Arbeit, Lieferung über das Kundenportal, Rechnung, Zahlung und Buchhaltung. Jeder Schritt kennt den vorigen.</p>
+    <dl class="facts">
+      <div><dt>Branche</dt><dd>Foto- und Videoproduktion</dd></div>
+      <div><dt>Umfang</dt><dd>Web-App mit Kundenportal und Social Hub</dd></div>
+      <div><dt>Geräte</dt><dd>Computer, Tablet, Handy (installierbar)</dd></div>
+      <div><dt>Technik</dt><dd>Next.js, TypeScript, PostgreSQL</dd></div>
+    </dl>
+    <div style="margin-top:48px">
+      {{shot:kontor-dashboard-hero|Startseite von Kontor: nächster Termin, Umsatz, Gewinn, offene Rechnungen, Aufgaben und eine Zeitleiste mit Angeboten, Rechnungen und Fristen (Beispieldaten)|eager|100vw}}
+      <p class="cap">Die Übersicht: nächster Termin, Kennzahlen, Aufgaben und die Zeitleiste aller Aufträge. Alle Namen und Zahlen in den Bildern sind Beispieldaten.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Ausgangslage</p>
+      <h2>Ein Auftrag, sieben Werkzeuge</h2>
+      <p>Anfragen kamen per E-Mail und Telefon, Angebote entstanden in Word, Rechnungen in einer Vorlage, die Buchhaltung in Excel. Fotos und Videos gingen per Download-Link an die Kunden, Zeiten wurden nachträglich geschätzt, Social-Media-Beiträge in drei Apps geplant.</p>
+      <p>Das Ergebnis: dieselben Daten mehrfach eingegeben, kein Überblick, welches Angebot noch offen ist, und am Quartalsende Stunden für die Umsatzsteuervoranmeldung.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Ziel</p>
+      <h2>Ein Datensatz für den ganzen Weg</h2>
+      <ul class="check">
+        <li>Jeder Kunde und jeder Auftrag nur einmal erfassen</li>
+        <li>Aus der Anfrage das Angebot, aus dem Angebot die Rechnung, aus der Zahlung die Buchung</li>
+        <li>Kunden bekommen ihre Dateien in einem eigenen Portal statt per Link</li>
+        <li>Auswertungen für die Steuerberatung jederzeit auf Knopfdruck</li>
+        <li>Am Handy genauso nutzbar wie am Computer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="ablauf">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Die Kundenlogik</p>
+      <h2>Der Weg eines Auftrags in acht Schritten</h2>
+      <p class="lead">So läuft ein typischer Auftrag durch Kontor, hier am Beispiel eines Imagefilms mit Fotoshooting für einen Tourismusbetrieb.</p>
+    </div>
+    <ol class="chain">
+      <li><a href="#s1">1 Anfrage</a></li><li><a href="#s2">2 Kalkulation</a></li><li><a href="#s3">3 Angebot</a></li><li><a href="#s4">4 Arbeit und Zeiten</a></li><li><a href="#s5">5 Kundenportal</a></li><li><a href="#s6">6 Rechnung</a></li><li><a href="#s7">7 Belege und Buchung</a></li><li><a href="#s8">8 Auswertung</a></li>
+    </ol>
+    <div class="flow">
+      <article class="flow__step" id="s1">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 1</span>
+          <h3>Anfrage erfassen</h3>
+          <p>Jede Anfrage landet in einer Liste: wer, worum es geht, Wunschtermin und Budget, soweit bekannt. Mit einem Klick wird daraus ein Angebot, der Kunde wird dabei gleich in der Kartei angelegt.</p>
+        </div>
+        {{shot:kontor-anfragen|Liste der Anfragen in Kontor mit Eingang, Kunde, Thema, Wunschtermin und Budget (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s2">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 2</span>
+          <h3>Kalkulieren</h3>
+          <p>Leistungen sind mit Kosten, Aufschlägen und Einheiten hinterlegt. Kontor rechnet daraus einen Preisvorschlag und zeigt später am Angebot, wie viele Stunden kalkuliert und wie viele tatsächlich angefallen sind.</p>
+          <ul><li>Stunden, Fremdkosten und Pauschalen je Leistung</li><li>Vorschlag für den Verkaufspreis</li><li>Deckungsbeitrag je Auftrag und je Stunde</li></ul>
+        </div>
+        {{shot:kontor-kalkulation|Leistung mit Kalkulation in Kontor: Kosten je Einheit, Aufschläge und Preisvorschlag (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s3">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 3</span>
+          <h3>Angebot schreiben und nachfassen</h3>
+          <p>Positionen aus dem Leistungskatalog, Texte aus Vorlagen, Vorschau im eigenen Briefpapier. Das Angebot geht als PDF oder Word hinaus; Kontor merkt sich den Status von Entwurf über versendet bis angenommen und erinnert ans Nachfassen.</p>
+        </div>
+        {{shot:kontor-angebot|Angebot A26001 in Kontor mit Vorschau im Briefpapier, Gesamtbetrag und Knöpfen für versendet, Nachfassen und Auftrag starten (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s4">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 4</span>
+          <h3>Arbeiten, Zeiten und Termine</h3>
+          <p>Die Zeiterfassung läuft mit Start und Stopp je Kunde und Auftrag, Termine kommen aus dem Kalender. Beim Verrechnen übernimmt Kontor die offenen Stunden als Position in die Rechnung, die Zeiten gelten danach als verrechnet.</p>
+        </div>
+        {{shot:kontor-zeiten-verrechnen|Rechnungsentwurf in Kontor mit der Funktion Zeiten verrechnen: offene Zeiten werden als Position mit Stundensatz übernommen (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s5">
+        <div class="flow__text" id="portal">
+          <span class="flow__num">Schritt 5</span>
+          <h3>Liefern über das Kundenportal</h3>
+          <p>Fotos und Videos gehen nicht mehr per Download-Link hinaus, sondern in einen eigenen Bereich für den Kunden. Dort wählt er aus, kommentiert einzelne Bilder oder Stellen im Video, gibt frei und lädt in der passenden Qualität herunter.</p>
+          <ul><li>Präsentation und Abstimmung mit Auswahl und Herzen</li><li>Kommentare zu Bildern und Videostellen</li><li>Download als Original, Full HD oder HD</li><li>Neues erscheint sofort in Kontor</li></ul>
+        </div>
+        {{shot:kontor-kundenportal-auswahl|Kundenportal einer Galerie: Titelbild, Auswahl mit Herzen und Kommentaren, Knöpfe zum Abschicken der Auswahl und zum Herunterladen (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s6">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 6</span>
+          <h3>Rechnung stellen</h3>
+          <p>Aus dem angenommenen Angebot wird die Rechnung: ganz, als Anzahlung in Prozent oder als Schlussrechnung. Beim Stellen prüft Kontor Leistungsdatum und Firmendaten und vergibt die Nummer. Zahlungen werden erfasst, eine Stornorechnung entsteht mit eigener Nummer.</p>
+        </div>
+        {{shot:kontor-rechnung|Rechnung 26001 in Kontor mit Vorschau, offenem Betrag, Zahlung erfassen und Verknüpfung zu Kunde und Angebot (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s7">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 7</span>
+          <h3>Belege und Buchung</h3>
+          <p>Jede Zahlung wird zur Einnahme im Journal, je Steuersatz und mit dem Tag des Zahlungseingangs. Ausgaben kommen als Foto vom Handy oder per E-Mail ins Belegpostfach; Kontor liest Datum, Betrag und Lieferant und schlägt die Buchung vor. Gebucht wird erst nach Bestätigung.</p>
+        </div>
+        {{shot:kontor-belegpostfach|Belegpostfach in Kontor: Belege fotografieren oder hochladen, Belege per E-Mail, erkannter Beleg mit Betrag und Kategorie (Beispieldaten)}}
+      </article>
+      <article class="flow__step" id="s8">
+        <div class="flow__text">
+          <span class="flow__num">Schritt 8</span>
+          <h3>Auswerten</h3>
+          <p>Aus dem Journal entstehen Umsatzsteuervoranmeldung mit den Kennzahlen des Formulars U 30, Beilage E1a und Jahresübersicht, dazu ein Export für die Steuerberatung mit allen Belegen. Ändert sich nach der Abgabe etwas im Zeitraum, zeigt Kontor den Unterschied.</p>
+        </div>
+        {{shot:kontor-auswertungen-uva|Auswertungen in Kontor: Umsatzsteuervoranmeldung nach Monaten mit Kennzahlen, Zahllast und Fälligkeit (Beispieldaten)}}
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Alles verknüpft</p>
+      <h2>Ein Kunde, eine Karte</h2>
+      <p class="lead">Die Kundenkarte zeigt alles an einem Ort: Angebote, Rechnungen, Umsatz, offene Aufgaben, Notizen, Zeiten, Galerien und den Verlauf. Die Rechnung kennt ihr Angebot und ihre Zahlungen, das Angebot seine Kosten und Stunden.</p>
+    </div>
+    {{shot:kontor-kundenkarte|Kundenkarte eines Beispielkunden in Kontor: Kennzahlen, Angebote, Rechnungen, Kundenbereich, Notizbuch, Zeiten, Stammdaten und Verlauf|lazy|100vw}}
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Mehr als Verkauf und Buchhaltung</p>
+      <h2>Galerien, Social Media und das Handy</h2>
+    </div>
+    <div class="shots-2">
+      <div>
+        {{shot:kontor-galerien|Galerien in Kontor: Übersicht mit Suche und Sortierung, Karten für Präsentation und Abstimmung (Beispieldaten)|lazy|(max-width: 700px) 100vw, 50vw}}
+        <h3 style="margin-top:24px">Galerien</h3>
+        <p class="muted">Dateien hochladen, als Präsentation oder Abstimmung teilen, Sets bilden, Rückmeldungen sammeln. Was Kunden schicken, steht oben auf der Galerie.</p>
+      </div>
+      <div>
+        {{shot:kontor-social-planer|Social Hub in Kontor: Monatsplan für Instagram, Facebook und LinkedIn mit geplanten und freigegebenen Beiträgen (Beispieldaten)|lazy|(max-width: 700px) 100vw, 50vw}}
+        <h3 style="margin-top:24px">Social Hub</h3>
+        <p class="muted">Beiträge für Instagram, Facebook und LinkedIn planen, freigeben und zur geplanten Zeit veröffentlichen, mit Bildern aus der eigenen Bibliothek.</p>
+      </div>
+    </div>
+    <div class="split" style="margin-top:64px">
+      <div>
+        <h3>Am Handy wie eine App</h3>
+        <p class="muted">Kontor lässt sich am Handy auf den Startbildschirm legen. Angebote ansehen, Kunden finden, Zeit starten, Belege fotografieren: unterwegs genauso wie im Büro.</p>
+      </div>
+      <div class="shots-2">
+        {{shot:kontor-handy-angebot|Angebot in Kontor am Handy (Beispieldaten)|lazy|(max-width: 700px) 100vw, 25vw}}
+        {{shot:kontor-handy-kunden|Kundenkartei in Kontor am Handy (Beispieldaten)|lazy|(max-width: 700px) 100vw, 25vw}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Technik und Sicherheit</p>
+      <h2>Solide gebaut, offen für Erweiterungen</h2>
+      <ul class="check">
+        <li>Next.js und TypeScript, Datenbank PostgreSQL</li>
+        <li>Anmeldung mit Passwort und Authenticator-App</li>
+        <li>Belege per E-Mail-Postfach, Termine aus dem Kalender (iCal), Beiträge über die Schnittstelle von Meta</li>
+        <li>Dokumente als PDF und Word, Export als Excel, CSV und Jahrespaket mit Belegen</li>
+        <li>Automatische Tests für Beträge, Steuern, Fristen und Nummernkreise</li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Was das für Ihren Betrieb heißt</p>
+      <h2>Ihr Ablauf, Ihre App</h2>
+      <p>Kontor ist für eine Foto- und Videoproduktion gebaut. Der Weg dahinter passt auf viele Betriebe: Anfrage, Angebot, Auftrag, Lieferung, Rechnung. Ob Handwerk, Hotel, Agentur oder Dienstleister: Wir bauen die Schritte, die Sie wirklich brauchen, und lassen den Rest weg.</p>
+      <div class="actions">
+        <a href="../../#kontakt" class="btn btn--primary">Eigene App anfragen <span aria-hidden="true">→</span></a>
+        <a href="../../app-entwicklung/" class="btn btn--secondary">Zur App-Entwicklung</a>
+      </div>
+    </div>
+  </div>
+</section>
