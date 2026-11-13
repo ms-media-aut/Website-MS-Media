@@ -26,7 +26,7 @@ ZEICHEN = ('<svg viewBox="0 0 36 26" fill="none" stroke="currentColor" stroke-wi
            '<line x1="18" y1="1" x2="18" y2="25"/></svg>')
 
 NAV = [
-    ('leistungen', 'Leistungen', '#leistungen'),
+    ('webdesign', 'Webdesign', 'webdesign-kaernten/'),
     ('apps', 'App-Entwicklung', 'app-entwicklung/'),
     ('referenz', 'Referenz', 'referenzen/kontor/'),
     ('seo', 'SEO', 'seo-optimierung/'),
@@ -37,6 +37,7 @@ ORGANISATION = {
     '@type': 'ProfessionalService',
     '@id': DOMAIN + '/#organisation',
     'name': 'Code und Licht',
+    'alternateName': 'Code und Licht · Webdesign und App-Entwicklung Kärnten',
     'description': ('Webdesign, App-Entwicklung und SEO aus Klagenfurt, Kärnten: Websites, Web-Apps, Dashboards und '
                     'Kundenportale für kleine und mittelständische Unternehmen und Tourismusbetriebe.'),
     'url': DOMAIN + '/',
@@ -50,7 +51,7 @@ ORGANISATION = {
                 'addressLocality': 'Köttmannsdorf', 'addressRegion': 'Kärnten', 'addressCountry': 'AT'},
     'areaServed': [{'@type': 'City', 'name': 'Klagenfurt'}, {'@type': 'City', 'name': 'Villach'},
                    {'@type': 'AdministrativeArea', 'name': 'Kärnten'}, {'@type': 'Country', 'name': 'Österreich'}],
-    'knowsAbout': ['Webdesign', 'App-Entwicklung', 'Web-Apps', 'Dashboards', 'Kundenportale', 'Prozessoptimierung',
+    'knowsAbout': ['Webdesign', 'Homepage erstellen', 'App-Entwicklung', 'Softwareentwicklung', 'Web-Apps', 'Dashboards', 'Kundenportale', 'Prozessoptimierung',
                    'Automatisierung', 'SEO', 'Suchmaschinenoptimierung', 'Landingpages', 'Spieleentwicklung'],
     'sameAs': ['https://www.instagram.com/michael.stabentheiner/', 'https://at.linkedin.com/company/michaelstabentheiner',
                'https://www.facebook.com/michael.stabentheiner/', 'https://www.michaelstabentheiner.at/'],
@@ -101,7 +102,7 @@ def fuss(root):
         <ul>
           <li><a href="{root}app-entwicklung/">App-Entwicklung</a></li>
           <li><a href="{root}app-entwicklung/#dashboards">Dashboards und Kundenportale</a></li>
-          <li><a href="{root}#webdesign">Webdesign</a></li>
+          <li><a href="{root}webdesign-kaernten/">Webdesign Kärnten</a></li>
           <li><a href="{root}seo-optimierung/">SEO-Optimierung</a></li>
           <li><a href="https://www.michaelstabentheiner.at/">Foto- und Videoproduktion</a></li>
         </ul>
