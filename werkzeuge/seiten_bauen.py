@@ -160,7 +160,7 @@ def shot(root, name, alt, art='lazy', groessen='(max-width: 900px) 100vw, 60vw')
     klein = os.path.exists(os.path.join(ordner, name + '-720.webp'))
     srcset = f'{pfad}-720.webp 720w, {pfad}.webp {b}w' if klein else f'{pfad}.webp {b}w'
     laden = 'fetchpriority="high"' if art == 'eager' else 'loading="lazy"'
-    klasse = 'shot shot--phone' if b < h else 'shot'
+    klasse = 'shot shot--phone' if h > b * 1.6 else 'shot'   # nur echte Handy-Bildschirme schmal
     return (f'<figure class="{klasse}"><picture><source type="image/webp" srcset="{srcset}" sizes="{groessen}">'
             f'<img src="{pfad}.jpg" alt="{html.escape(alt)}" width="{b}" height="{h}" {laden} decoding="async"></picture></figure>')
 
